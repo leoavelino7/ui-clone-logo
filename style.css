@@ -8,13 +8,14 @@
   --light: #FBFBFB;
 }
 
-body {
+#root {
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
 
   flex-wrap: wrap;
+  overflow: hidden;
 }
 
 .ehash-logo {
@@ -24,12 +25,14 @@ body {
   justify-content: center;
   align-items: center;
 
-  margin: 15px;
-  padding: 5px;
+  width: 6em;
+  height: 6em;
+  margin: 1.2em;
+  padding: 0.36em;
 
   transform: rotate(-45deg);
 
-  border: 4px solid var(--secondary);
+  border: 0.2222em solid var(--secondary);
   border-radius: 50%;
   background: var(--light-green);
 }
@@ -41,22 +44,22 @@ body {
   justify-content: space-around;
   align-items: flex-start;
 
-  left: 10px;
-  width: 18px;
-  height: 15px;
+  left: .6em;
+  width: 1.2em;
+  height: 1.1em;
 
   background: var(--light);
-  border: 4px solid var(--secondary);
+  border: 0.2222em solid var(--secondary);
 }
 
 .ehash-logo__head--top-point,
 .ehash-logo__head--bottom-point {
   position: relative;
-  left: 5px;
+  left: 0.28em;
 
   background: var(--secondary);
-  width: 5px;
-  height: 5px;
+  width: 0.28em;
+  height: 0.28em;
 }
 
 .ehash-logo__body {
@@ -66,86 +69,48 @@ body {
   justify-content: space-between;
   z-index: 1;
 
-  width: 60px;
-  height: 25px;
-  margin: 0 auto;
+  width: 4em;
+  height: 2em;
+  margin: 0 0;
 
   background: var(--primary);
-  border: 4px solid var(--secondary);
-  border-top-right-radius: 50px;
-  border-bottom-right-radius: 50px;
+  border: 0.2222em solid var(--secondary);
+  border-top-right-radius: 1.2em;
+  border-bottom-right-radius: 1.2em;
 }
 
 .ehash-logo__body--text {
   position: relative;
-  left: 6px;
-  bottom: 2px;
+  left: 0.1em;
+  bottom: 0.1em;
 
   text-transform: lowercase;
   font-family: monospace;
-  font-size: 2rem;
+  font-size: 2em;
 
   color: var(--white);
 }
 
 .ehash-logo__body__hash {
   position: relative;
-  left: 4px;
+  left: 0.2222em;
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
   
-  width: 30px;
+  width: 2em;
   height: 100%;
   
   border-radius: 50%;
-  border: 4px solid var(--secondary);
+  border: 0.2222em solid var(--secondary);
   background: var(--rose);
 }
 
 .ehash-logo__body__hash--text {
   text-transform: lowercase;
   font-family: system-ui;
-  font-size: 1.5rem;
+  font-size: 1.5em;
 
   color: var(--white);
-}
-
-@media screen and (min-width: 425px) {
-
-  .ehash-logo {
-    font-size: 5rem;
-  }
-  
-  .ehash-logo__head {
-    width: 31px;
-    height: 36px;
-  }
-  
-  .ehash-logo__head--top-point,
-  .ehash-logo__head--bottom-point {
-    width: 10px;
-    height: 10px;
-  }
-  
-  .ehash-logo__body {
-    width: 130px;
-    height: 60px;
-
-    margin: 0 0;
-  }
-  
-  .ehash-logo__body--text {
-    font-size: 4.5rem;
-  }
-  
-  .ehash-logo__body__hash {
-    width: 60px;
-  }
-  
-  .ehash-logo__body__hash--text {
-    font-size: 3rem;
-  }
-
 }
