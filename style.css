@@ -1,116 +1,144 @@
 :root {
-  --primary: #34A1F2;
-  --secondary: #2E4181;
-  --light-green: #D4FAFC;
-  --grey: #8E93AC;
-  --rose: #F7739C;
-  --white: #FFFFFF;
-  --light: #FBFBFB;
+  --red: #ea4335;
+  --blue: #4285f4;
+  --green: #34a853;
+  --yellow: #fbb605;
+  --white: #fff;
 }
 
-#root {
+body {
   display: flex;
   flex-direction: column;
-  justify-content: center;
   align-items: center;
 
-  flex-wrap: wrap;
-  overflow: hidden;
+  margin: 50px auto;
+  padding: 0;
+
+  font-size: 15px;
 }
 
-.ehash-logo {
+body .ui-clone-google:nth-child(1n){
+  animation: moveGoogle 2.1s ease 1s infinite;
+}
+
+body .ui-clone-google:nth-child(2n){
+  animation: moveGoogle2 2.2s ease 2s infinite;
+}
+
+body .ui-clone-google:nth-child(3n){
+  animation: moveGoogle3 3s ease 3s infinite;
+}
+
+body .ui-clone-google:nth-child(4n){
+  animation: moveGoogle4 1.5s ease 4s infinite;
+}
+
+
+.ui-clone-google {
   position: relative;
-  display: flex;
-  flex-direction: row;
-  justify-content: center;
-  align-items: center;
+  left: 0%;
 
-  width: 6em;
-  height: 6em;
-  margin: 1.2em;
-  padding: 0.36em;
+  width: 8.125em;
+  height: 8.125em;
 
-  transform: rotate(-45deg);
-
-  border: 0.2222em solid var(--secondary);
   border-radius: 50%;
-  background: var(--light-green);
+
+  border-top: 3.125em solid var(--red);
+  border-right: 3.125em solid var(--blue);
+  border-bottom: 3.125em solid var(--green);
+  border-left: 3.125em solid var(--yellow);
+
+  margin: 70px 0;
+
 }
 
-.ehash-logo__head {
-  position: relative;
-  display: flex;
-  flex-direction: column;
-  justify-content: space-around;
-  align-items: flex-start;
-
-  left: .6em;
-  width: 1.2em;
-  height: 1.1em;
-
-  background: var(--light);
-  border: 0.2222em solid var(--secondary);
+@keyframes moveGoogle {
+  0% {
+    left: 0%;
+    transform: translate(0, 0) rotate(0) skew(0, 0);
+  }
+  20% {
+    left: 50%;
+    transform: translate(0, 110px) rotate(180deg) skew(25deg, 10deg);
+  }
+  50% {
+    left: 70%;
+    transform: translate(0, 50px) rotate(360deg) skew(25deg, 10deg);
+  }
+  100% {
+    left: 0%;
+    transform: translate(0, 0) rotate(0) skew(0,0);
+  }
 }
 
-.ehash-logo__head--top-point,
-.ehash-logo__head--bottom-point {
-  position: relative;
-  left: 0.28em;
-
-  background: var(--secondary);
-  width: 0.28em;
-  height: 0.28em;
+@keyframes moveGoogle2 {
+  0% {
+    left: 0%;
+    transform: translate(0, 0) rotate(0);
+  }
+  50% {
+    left: 70%;
+    transform: translate(0, 50px) rotate(360deg);
+  }
+  100% {
+    left: 0%;
+    transform: translate(0, 0) rotate(0);
+  }
 }
 
-.ehash-logo__body {
-  display: flex;
-  flex-direction: row;
-  align-items: center;
-  justify-content: space-between;
-  z-index: 1;
-
-  width: 4em;
-  height: 2em;
-  margin: 0 0;
-
-  background: var(--primary);
-  border: 0.2222em solid var(--secondary);
-  border-top-right-radius: 1.2em;
-  border-bottom-right-radius: 1.2em;
+@keyframes moveGoogle3 {
+  0% {
+    left: 0%;
+  }
+  40% {
+    left: 60%;
+  }
+  100% {
+    left: 0%;
+  }
 }
 
-.ehash-logo__body--text {
-  position: relative;
-  left: 0.1em;
-  bottom: 0.1em;
-
-  text-transform: lowercase;
-  font-family: monospace;
-  font-size: 2em;
-
-  color: var(--white);
+@keyframes moveGoogle4 {
+  0% {
+    left: 0%;
+    transform: rotate(0deg);
+  }
+  40% {
+    left: 100%;
+    transform: rotate(360deg);
+  }
+  100% {
+    left: 0%;
+    transform: rotate(0deg);
+  }
 }
 
-.ehash-logo__body__hash {
-  position: relative;
-  left: 0.2222em;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
+.ui-clone-google:before {
+  content: '';
+  position: absolute;
+  top: -9.6875em;
+  right: -8.4375em;
   
-  width: 2em;
-  height: 100%;
+  border-top: 6.25em solid transparent;
+  border-right: 6.25em solid var(--white);
+  border-bottom: 6.25em solid transparent;
+  border-left: 6.25em solid transparent;
+  border-radius: 0;
   
-  border-radius: 50%;
-  border: 0.2222em solid var(--secondary);
-  background: var(--rose);
+  transform: rotate(85deg);
 }
 
-.ehash-logo__body__hash--text {
-  text-transform: lowercase;
-  font-family: system-ui;
-  font-size: 1.5em;
+.ui-clone-google:after {
+  content: '';
+  position: absolute;
+  top: 50%;
+  right: -3.125em;
 
-  color: var(--white);
+  width: 6.25em;
+  height: 3.125em;
+  
+  background: var(--blue);
+  border-bottom-right-radius: 1.3125em;
+  
+  transform: translate(-0.125em, -1.3125em);
 }
