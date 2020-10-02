@@ -1,8 +1,8 @@
 :root {
-  --red: #ea4335;
-  --blue: #4285f4;
-  --green: #34a853;
-  --yellow: #fbb605;
+  --red: #dc4c40;
+  --blue: #367bf0;
+  --green: #0fa361;
+  --yellow: #f7c43a;
   --white: #fff;
 }
 
@@ -14,131 +14,131 @@ body {
   margin: 50px auto;
   padding: 0;
 
-  font-size: 15px;
+  font-size: 16px;
+
+  overflow-x: hidden;
 }
 
-body .ui-clone-google:nth-child(1n){
-  animation: moveGoogle 2.1s ease 1s infinite;
+body .ui-clone-chrome:nth-child(even) {
+  animation: animateRoll .9s linear forwards;
 }
 
-body .ui-clone-google:nth-child(2n){
-  animation: moveGoogle2 2.2s ease 2s infinite;
+body .ui-clone-chrome:nth-child(odd) {
+  animation: animateJump .8s linear forwards;
 }
 
-body .ui-clone-google:nth-child(3n){
-  animation: moveGoogle3 3s ease 3s infinite;
-}
-
-body .ui-clone-google:nth-child(4n){
-  animation: moveGoogle4 1.5s ease 4s infinite;
-}
-
-
-.ui-clone-google {
+.ui-clone-chrome {
   position: relative;
-  left: 0%;
 
-  width: 8.125em;
-  height: 8.125em;
+  width: 4.375em;
+  height: 4.375em;
 
+  margin: 50px 0;
+
+  background: var(--red);
   border-radius: 50%;
 
-  border-top: 3.125em solid var(--red);
-  border-right: 3.125em solid var(--blue);
-  border-bottom: 3.125em solid var(--green);
-  border-left: 3.125em solid var(--yellow);
-
-  margin: 70px 0;
-
+  overflow: hidden;
 }
 
-@keyframes moveGoogle {
-  0% {
-    left: 0%;
-    transform: translate(0, 0) rotate(0) skew(0, 0);
-  }
-  20% {
-    left: 50%;
-    transform: translate(0, 110px) rotate(180deg) skew(25deg, 10deg);
-  }
-  50% {
-    left: 70%;
-    transform: translate(0, 50px) rotate(360deg) skew(25deg, 10deg);
-  }
-  100% {
-    left: 0%;
-    transform: translate(0, 0) rotate(0) skew(0,0);
-  }
-}
-
-@keyframes moveGoogle2 {
-  0% {
-    left: 0%;
-    transform: translate(0, 0) rotate(0);
-  }
-  50% {
-    left: 70%;
-    transform: translate(0, 50px) rotate(360deg);
-  }
-  100% {
-    left: 0%;
-    transform: translate(0, 0) rotate(0);
-  }
-}
-
-@keyframes moveGoogle3 {
-  0% {
-    left: 0%;
-  }
-  40% {
-    left: 60%;
-  }
-  100% {
-    left: 0%;
-  }
-}
-
-@keyframes moveGoogle4 {
-  0% {
-    left: 0%;
-    transform: rotate(0deg);
-  }
-  40% {
-    left: 100%;
-    transform: rotate(360deg);
-  }
-  100% {
-    left: 0%;
-    transform: rotate(0deg);
-  }
-}
-
-.ui-clone-google:before {
-  content: '';
-  position: absolute;
-  top: -9.6875em;
-  right: -8.4375em;
-  
-  border-top: 6.25em solid transparent;
-  border-right: 6.25em solid var(--white);
-  border-bottom: 6.25em solid transparent;
-  border-left: 6.25em solid transparent;
-  border-radius: 0;
-  
-  transform: rotate(85deg);
-}
-
-.ui-clone-google:after {
-  content: '';
+.ui-clone-chrome-circle {
   position: absolute;
   top: 50%;
-  right: -3.125em;
+  left: 50%;
 
-  width: 6.25em;
-  height: 3.125em;
+  transform: translate(-50%, -50%);
+
+  width: 1.4375em;
+  height: 1.4375em;
   
   background: var(--blue);
-  border-bottom-right-radius: 1.3125em;
+  border-radius: 50%;
+  border: 0.1666em solid var(--white);
+  z-index: 3;
+}
+
+.ui-clone-chrome-yellow {
+  position: absolute;
+  top: 1.333em;
+  left: 2.4em;
+
+  width: 100%;
+  height: 100%;
+
+  background: var(--yellow);
+
+  transform: skewX(-30deg);
+  z-index: 2;
+} 
+
+.ui-clone-chrome-yellow:before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: -0.7291em;
   
-  transform: translate(-0.125em, -1.3125em);
+  width: 100%;
+  height: 25%;
+
+  background: var(--yellow);
+
+  transform: skewX(50deg);
+}
+
+.ui-clone-chrome-green {
+  position: absolute;
+  top: 0.875em;
+  left: -2.6770em;
+
+  width: 100%;
+  height: 100%;
+
+  background: var(--green);
+
+  z-index: 1;
+
+  transform: skew(32deg);
+} 
+
+
+.ui-clone-chrome-green:before {
+  content: '';
+
+  position: absolute;
+  top: 1.6666em;
+  left: 1.7916em;
+
+  width: 100%;
+  height: 100%;
+
+  background: var(--green);
+} 
+
+@keyframes animateRoll {
+  0% {
+    transform: rotate(0);
+    left: 0;
+  }
+
+  100% {
+    transform: rotate(360deg);
+    left: 100%;
+  }
+}
+
+@keyframes animateJump {
+  0% {
+    transform: rotate(0);
+    top: 0;
+  }
+  
+  50% {
+    transform: rotate(-360deg);
+    top: -171px;
+  }
+  
+  100% {
+    transform: rotate(0);
+    top: 0;
+  }
 }
