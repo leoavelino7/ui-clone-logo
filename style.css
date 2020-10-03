@@ -1,6 +1,5 @@
 :root {
-  --blue: #34588e;
-  --red: #da473c;
+  --black: #000;
   --white: #fff;
 }
 
@@ -11,76 +10,63 @@ body {
   
   padding: 0;
 
-  background: var(--blue);
+  background: var(--black);
 
   font-size: 16px;
 
   overflow-x: hidden;
 }
 
-.ui-clone-pepsi {
+.ui-clone-apple {
   font-size: 16px;
 
   position: relative;
   
-  width: 18.75em;
-  height: 18.75em;
+  width: 13em;
+  height: 12.375em;
 
-  margin: 3.125em auto;
+  margin: 7.125em auto;
   
-  background: var(--blue);
-  border: 0.625em solid var(--white);
-  border-radius: 50%;
+  background: var(--white);
+  border-radius: 35% 35% 41% 41% / 42% 42% 75% 75%;
 
-  animation: animate .5s infinite ease-in-out;
-
-  overflow: hidden;
-  
 }
 
-.ui-clone-pepsi:before {
+.ui-clone-apple:before {
   position: absolute;
   content: '';
-  top: -10.625em;
-  left: -15em;
 
-  width: 31.25em;
-  height: 25em;
+  width: 3.4375em;
+  height: 3.4375em;
+
+  margin: -3.1875em 0 0 6.25em;
+
+  border-radius: 6.25em 0;
 
   background: var(--white);
 
-  border-radius: 25%;
-
-  transform: rotate(-15deg);
-  z-index: 1;
+  z-index: 3;
 }
 
-.ui-clone-pepsi:after {
+
+.ui-clone-apple:after {
   position: absolute;
   content: '';
-  top: -17.1875em;
-  left: -18.75em;
 
-  width: 31.25em;
-  height: 31.25em;
+  width: 5.625em;
+  height: 5.625em;
 
-  background: var(--red);
+  margin: 1.75em 0 0 10.875em;
 
+  background: var(--black);
   border-radius: 50%;
+  box-shadow: -6.9375em -6.84375em 0 var(--black), 
+  -7.375em -6.6875em 0 var(--black),
+  -7.21875em -6.375em 0 var(--black),
+  -6.59375em -7.84375em 0 var(--black),
+  -8.0625em -10.375em 0 var(--black),
+  -107.5px 11.375em 0 var(--black),
+  -7.4375em 10.0625em 0 var(--black);
 
   z-index: 2;
-}
-
-@keyframes animate {
-  0% {
-    transform: translateX(0);
-  }
-
-  50% {
-    transform: translateX(5px);
-  }
-
-  100% {
-    transform: translateX(0);
-  }
 }

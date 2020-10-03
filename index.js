@@ -9,7 +9,7 @@ let template = ''
 
 for(let i = fontSize.initial; i < fontSize.final; i++) {
   template += `
-    <div class="ui-clone-pepsi" style="font-size: ${i}px;"></div>
+    <div class="ui-clone-apple" style="font-size: ${i}px;"></div>
   `;
 }
 
